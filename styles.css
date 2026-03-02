@@ -1,0 +1,47 @@
+/* ===== Popup Quizer Styles ===== */
+
+/* --- Spinner: tiny, top-right corner --- */
+.pq-spinner {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(76, 175, 80, 0.15);
+  border-radius: 50%;
+  border-top-color: #4CAF50;
+  animation: pq-spin 0.7s linear infinite;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes pq-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Quick flash animation on correct answer --- */
+.pq-flash {
+  animation: pq-pulse 0.9s ease forwards;
+}
+
+@keyframes pq-pulse {
+  0% {
+    background-color: inherit;
+  }
+
+  25% {
+    background-color: rgba(76, 175, 80, 0.45);
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+  }
+
+  60% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: inherit;
+    box-shadow: none;
+  }
+}
